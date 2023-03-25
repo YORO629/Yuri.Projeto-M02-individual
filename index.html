@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifra de Cesar base64</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+    </header>
+    <!--Preenchimento das informacoes(Formulario)-->
+    <main class="menu">
+        <div class="form">
+            <h1 class="titulo">Trabalho Individual</h1>
+            <!--Seleção do opção codificador usado-->
+            <p class="tipoCripto">Criptografia Do Tipo:</p>
+            <select name="" id="selecao">
+                <option id="cesar">Cifra de Cesar</option>
+                <option id="base">Base 64</option>
+                <input type="number" id="passoCesar" class="increment" onkeyup="validandoPasso()">Incremento:
+            </select>
+
+            <!--Empacotamento do codigo(Criptografia)-->
+            <div class="botao">
+                <form>
+                    <input type="radio" name="code" id="criptografar" class="cripto" checked="checked" />
+                    <label for="criptografar"> Criptografar</label>
+                    <!--Tornar o texto clicável para atribuir o radio botton e seleciona somente uma das opcoes-->
+                    <input type="radio" name="code" id="descriptografar" class="cripto" value="descriptografar" />
+                    <label for="descriptografar"> Descriptografar</label>
+                </form>
+            </div>
+            <form id="mensagens">
+                <p>mensagem:</p>
+                <input class="mensagemRecebida64" id="received64" type="text" placeholder="Digite sua mensagem" required
+                    onkeyup="base64()" />
+                <input id="receivedCesar" class="styleCesar" type="text" placeholder="Digite sua mensagem" required
+                    onkeyup="validandoPasso()" />
+                <p>Texto Criptografado</p>
+                <textarea name="ConvertedTXT" class="output64" id="output64" placeholder="Resultado"></textarea>
+                <textarea name="ConvertedTXT" id="outputCesar" class="outputCesar"
+                    placeholder="Resultado"></textarea>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
